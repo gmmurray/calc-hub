@@ -1,11 +1,14 @@
-import "@mantine/core/styles.css";
-import React from "react";
-import { MantineProvider, ColorSchemeScript } from "@mantine/core";
-import { theme } from "../theme";
+import '@mantine/core/styles.css';
+
+import { ColorSchemeScript, MantineProvider } from '@mantine/core';
+
+import { AppLayout } from '../lib/components/layout/appLayout';
+import React from 'react';
+import { theme } from '../config/theme';
 
 export const metadata = {
-  title: "Mantine Next.js template",
-  description: "I am using Mantine with Next.js!",
+  title: 'CalcHub',
+  description: 'A collection of various, randomly useful calculators',
 };
 
 export default function RootLayout({ children }: { children: any }) {
@@ -20,7 +23,9 @@ export default function RootLayout({ children }: { children: any }) {
         />
       </head>
       <body>
-        <MantineProvider theme={theme}>{children}</MantineProvider>
+        <MantineProvider theme={theme} defaultColorScheme="dark">
+          <AppLayout>{children}</AppLayout>
+        </MantineProvider>
       </body>
     </html>
   );
