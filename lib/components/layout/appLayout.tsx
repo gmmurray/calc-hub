@@ -1,24 +1,31 @@
 'use client';
 
 import {
+  ActionIcon,
   AppShell,
   Burger,
   Button,
   Group,
   NavLink,
   Skeleton,
+  TextInput,
   Title,
 } from '@mantine/core';
-import { Icon, IconCrane, IconPizza } from '@tabler/icons-react';
+import { IconCurrencyDollar, IconPizza, IconX } from '@tabler/icons-react';
+import { PropsWithChildren, useState } from 'react';
 
 import Link from 'next/link';
-import { PropsWithChildren } from 'react';
 import { useDisclosure } from '@mantine/hooks';
 
 type Props = {} & PropsWithChildren;
 
 export function AppLayout({ children }: Props) {
   const [opened, { toggle }] = useDisclosure();
+  const [toolSearchValue, setToolSearchValue] = useState('');
+
+  const visibleNavItems = navItems.filter(ni =>
+    ni.title.toLocaleLowerCase().includes(toolSearchValue.toLocaleLowerCase()),
+  );
 
   return (
     <AppShell
@@ -33,7 +40,20 @@ export function AppLayout({ children }: Props) {
         </Group>
       </AppShell.Header>
       <AppShell.Navbar p="md">
-        {navItems.map((item, index) => (
+        <TextInput
+          label="Search"
+          placeholder="Tool name"
+          value={toolSearchValue}
+          onChange={({ currentTarget: { value } }) =>
+            setToolSearchValue(value ?? '')
+          }
+          rightSection={
+            <ActionIcon onClick={() => setToolSearchValue('')}>
+              <IconX />
+            </ActionIcon>
+          }
+        />
+        {visibleNavItems.map((item, index) => (
           <NavLink
             key={index}
             h={28}
@@ -62,8 +82,8 @@ const navItems: {
     href: '/pizza',
   },
   {
-    title: 'test',
-    icon: <IconCrane />,
-    href: '/test',
+    title: 'Inflation',
+    icon: <IconCurrencyDollar />,
+    href: '/inflation',
   },
 ];

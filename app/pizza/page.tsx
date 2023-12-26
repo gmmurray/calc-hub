@@ -1,5 +1,5 @@
 import { Grid } from '@mantine/core';
-import PizzaCalculator from '../../lib/calculators/pizza/pizzaCalculator';
+import PizzaCalculator from '../../lib/tools/pizza/pizzaCalculator';
 import ToolPage from '../../lib/components/layout/toolPage';
 
 export default function PizzaPage() {
