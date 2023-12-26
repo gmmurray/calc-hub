@@ -6,7 +6,7 @@ type Props = {
   description: string;
 } & PropsWithChildren;
 
-function CalcPage({ title, description, children }: Props) {
+function ToolPage({ title, description, children }: Props) {
   return (
     <Fragment>
       <Title order={1}>{title}</Title>
@@ -16,4 +16,4 @@ function CalcPage({ title, description, children }: Props) {
   );
 }
 
-export default CalcPage;
+export default ToolPage;

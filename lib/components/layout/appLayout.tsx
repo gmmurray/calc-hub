@@ -29,7 +29,7 @@ export function AppLayout({ children }: Props) {
       <AppShell.Header>
         <Group h="100%" px="md">
           <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
-          <Title c="white">CalcHub</Title>
+          <Title c="white">ToolHub</Title>
         </Group>
       </AppShell.Header>
       <AppShell.Navbar p="md">

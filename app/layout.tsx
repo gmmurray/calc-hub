@@ -7,8 +7,8 @@ import React from 'react';
 import { theme } from '../config/theme';
 
 export const metadata = {
-  title: 'CalcHub',
-  description: 'A collection of various, randomly useful calculators',
+  title: 'ToolHub',
+  description: 'A collection of various, randomly useful tools',
 };
 
 export default function RootLayout({ children }: { children: any }) {
