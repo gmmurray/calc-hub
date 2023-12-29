@@ -2,6 +2,7 @@
 
 import {
   ActionIcon,
+  Anchor,
   Button,
   Grid,
   Group,
@@ -127,6 +128,14 @@ function InflationCalculator() {
           </Paper>
         </Grid.Col>
       )}
+      <Grid.Col span={12}>
+        <Text c="dimmed">
+          Calculations provided by{' '}
+          <Anchor href="https://www.statbureau.org" target="_blank">
+            www.statbureau.org
+          </Anchor>
+        </Text>
+      </Grid.Col>
     </Grid>
   );
 }
